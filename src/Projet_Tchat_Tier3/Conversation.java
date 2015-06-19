@@ -2,57 +2,42 @@ package Projet_Tchat_Tier3;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 public class Conversation implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	// Attributs
-	private int id;
-	private String content;
-	private Date startOn;
-	private int authorId;
+	private List<String> content;
+	private int authorId1;
+	private int authorId2;
+	
 	
 	// Constructeurs
-	public Conversation() {
-		this.id = new Random().nextInt();
-		this.startOn = new Date();
-	}
-	public Conversation(String content, int authorId) {
-		this();
+	public Conversation(List<String> content, int authorId1, int authorId2) {
 		this.content = content;
-		this.authorId = authorId;
+		this.authorId1 = authorId1;
+		this.authorId2 = authorId2;
 	}
-	public Conversation(int id, String content, Date postedOn, int authorId) {
-		this.id = id;
-		this.content = content;
-		this.startOn = postedOn;
-		this.authorId = authorId;
-	}
-	
+
 	// Accesseurs
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getContent() {
+	public List<String> getContent() {
 		return content;
 	}
-	public void setContent(String content) {
+	public void setContent(List<String> content) {
 		this.content = content;
 	}
-	public Date getPostedOn() {
-		return startOn;
+	public int getAuthorId1() {
+		return authorId1;
 	}
-	public void setPostedOn(Date postedOn) {
-		this.startOn = postedOn;
+	public void setAuthorId1(int authorId1) {
+		this.authorId1 = authorId1;
 	}
-	public int getAuthorId() {
-		return authorId;
+	public int getAuthorId2() {
+		return authorId2;
 	}
-	public void setAuthorId(int authorId) {
-		this.authorId = authorId;
+	public void setAuthorId2(int authorId2) {
+		this.authorId2 = authorId2;
 	}
 }

@@ -15,6 +15,7 @@ public class User implements Serializable {
 	private int id;
 	private String username;
 	private String password;
+	private String email;
 	private List<Integer> contactUserIds;
 	private List<Integer> postedTchatIds;
 	
@@ -23,12 +24,14 @@ public class User implements Serializable {
 		this.contactUserIds = new ArrayList<>();
 		this.postedTchatIds = new ArrayList<>();
 	}
-	public User(String username, String password) {
+	public User(String username, String password, String email) {
 		this();
 		this.username = username;
 		this.password = password;
+		this.email = email;
 	}
-
+	
+	// Accesseurs
 	public int getId() {
 		return id;
 	}
@@ -47,17 +50,23 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public List<Integer> getFollowedUserIds() {
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public List<Integer> getContactUserIds() {
 		return contactUserIds;
 	}
-	public void setFollowedUserIds(List<Integer> followedUserIds) {
-		this.contactUserIds = followedUserIds;
+	public void setContactUserIds(List<Integer> contactUserIds) {
+		this.contactUserIds = contactUserIds;
 	}
-	public List<Integer> getPostedTweetIds() {
+	public List<Integer> getPostedTchatIds() {
 		return postedTchatIds;
 	}
-	public void setPostedTweetIds(List<Integer> postedTweetIds) {
-		this.postedTchatIds = postedTweetIds;
+	public void setPostedTchatIds(List<Integer> postedTchatIds) {
+		this.postedTchatIds = postedTchatIds;
 	}
 
 }
